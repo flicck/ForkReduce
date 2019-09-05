@@ -1,29 +1,24 @@
 package cn.forkReduce;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
+
 import java.util.List;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.concurrent.RecursiveAction;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import cn.FRContainer.SeListSerial;
-import cn.FRContainer.SeListSerial.FRText;
+
 import cn.FRContainer.SeListSerial.SeList;
+import cn.FRContainer.SeListSerial.SeList.FRText;
 
 public class FRTask extends RecursiveAction {
 	private Long numOfTasks;
 	private int index=-1;;
-	//先用TreeSet,后续需要替换成TreeMap
+	//TreeMap
 	private TreeMap<String,Long> tm =null;
 	public FRTask(Long numReduceTasks){
 		numOfTasks=numReduceTasks;
@@ -41,7 +36,6 @@ public class FRTask extends RecursiveAction {
 			BufferedInputStream br = new BufferedInputStream(is);
 			//这个地方需要反序列化
 			int tmp=0;
-	//		byte[] buffer=new byte[1024];
 			byte[] bigbuffer=new byte[10485760];
 			
 			byte[] shortbuffer=null;
@@ -66,12 +60,13 @@ public class FRTask extends RecursiveAction {
 			try {
 				
 				SeList parseFrom = SeListSerial.SeList.parseFrom(shortbuffer);
-				List<FRText> innerListList = parseFrom.getInnerListList();
+				List<FRText> frtextsList = parseFrom.getFrtextsList();
 				String tmpstr=null;
-				for(FRText fr:innerListList){
+				for(FRText fr:frtextsList){
 					tmpstr=fr.getKey();	
 					if(tm.containsKey(tmpstr)){
 						//后续这里要给Forkreduce的reduce开放一个方法
+						
 						tm.put(tmpstr, tm.get(tmpstr)+1);
 					}else{
 						tm.put(fr.getKey(),1L);

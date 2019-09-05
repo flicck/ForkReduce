@@ -8,25 +8,22 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-
-import cn.FRContainer.SeListSerial;
+import cn.FRContainer.SeListSerial.SeList;
 import cn.FRContainer.SeListSerial.SeList.Builder;
 
 public class FRContext {
 
 	//这个地方先让只有一个线程操作,后续增加多线程
-	private static Long index=0L;
 	private static int numReduceTasks=3;
 	private static ArrayList<Builder> grandList=new ArrayList<Builder>(numReduceTasks);
 	private int partitionFlag=0;
 	private static File[] files=new File[numReduceTasks];
-	private static int count=0;	
-	private boolean flag=false;
-	
+
+
 	static{
 		URL resource = FRContext.class.getClassLoader().getResource("");
 		for(int i=0;i<numReduceTasks;i++){
-			grandList.add(SeListSerial.SeList.newBuilder());		
+			grandList.add(SeList.newBuilder());		
 			//创建一个长度为numReduceTasks的file数组
 			files[i]=new File(resource.toString().substring(6,resource.toString().length())+"tmp"+i+".txt");		
 			try {
@@ -39,15 +36,12 @@ public class FRContext {
 		
 	}
 	public void write(String key,Long value) {	
-		
-		int partitionFlag=((key.hashCode() & Integer.MAX_VALUE )% numReduceTasks);
-		
-		grandList.get(partitionFlag).addInnerList(grandList.get(partitionFlag).addInnerListBuilder().setKey(key).setValue(value));	
+		partitionFlag=((key.hashCode() & Integer.MAX_VALUE )% numReduceTasks);
+		grandList.get(partitionFlag).addFrtexts(SeList.FRText.newBuilder().setKey(key).setValue(value));	
 		if(ReadLine.splitSignal && ForkReduce.flag){
-			//恢复
+			//改变信号
 			ReadLine.splitSignal=false;
-			ForkReduce.flag=false;
-			
+			ForkReduce.flag=false;		
 			//要溢写了
 			for(int j=0;j<numReduceTasks;j++){                                  
 				BufferedOutputStream bw=null;
@@ -69,9 +63,11 @@ public class FRContext {
 			}
 			
 		}
-				}
-				
+		//改变信号
+		ForkReduce.flag=false;
 	}
+				
+}
 	
 
 

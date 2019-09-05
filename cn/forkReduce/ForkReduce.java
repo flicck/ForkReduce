@@ -1,6 +1,5 @@
 package cn.forkReduce;
 
-
 public class ForkReduce {
 	
 	private String outkey=null;
@@ -19,7 +18,7 @@ public class ForkReduce {
 		
 		
 	}
-	public void reduce(){
+	public void reduce(String key,Iterable<Long> values,FRContext frc){
 		
 	}
 }

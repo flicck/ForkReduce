@@ -19,27 +19,27 @@ public final class SeListSerial {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    java.util.List<cn.FRContainer.SeListSerial.FRText> 
-        getInnerListList();
+    java.util.List<cn.FRContainer.SeListSerial.SeList.FRText> 
+        getFrtextsList();
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    cn.FRContainer.SeListSerial.FRText getInnerList(int index);
+    cn.FRContainer.SeListSerial.SeList.FRText getFrtexts(int index);
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    int getInnerListCount();
+    int getFrtextsCount();
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    java.util.List<? extends cn.FRContainer.SeListSerial.FRTextOrBuilder> 
-        getInnerListOrBuilderList();
+    java.util.List<? extends cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder> 
+        getFrtextsOrBuilderList();
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    cn.FRContainer.SeListSerial.FRTextOrBuilder getInnerListOrBuilder(
+    cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder getFrtextsOrBuilder(
         int index);
   }
   /**
@@ -55,7 +55,7 @@ public final class SeListSerial {
       super(builder);
     }
     private SeList() {
-      innerList_ = java.util.Collections.emptyList();
+      frtexts_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -84,11 +84,11 @@ public final class SeListSerial {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                innerList_ = new java.util.ArrayList<cn.FRContainer.SeListSerial.FRText>();
+                frtexts_ = new java.util.ArrayList<cn.FRContainer.SeListSerial.SeList.FRText>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              innerList_.add(
-                  input.readMessage(cn.FRContainer.SeListSerial.FRText.PARSER, extensionRegistry));
+              frtexts_.add(
+                  input.readMessage(cn.FRContainer.SeListSerial.SeList.FRText.PARSER, extensionRegistry));
               break;
             }
             default: {
@@ -107,7 +107,7 @@ public final class SeListSerial {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          innerList_ = java.util.Collections.unmodifiableList(innerList_);
+          frtexts_ = java.util.Collections.unmodifiableList(frtexts_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -126,39 +126,722 @@ public final class SeListSerial {
               cn.FRContainer.SeListSerial.SeList.class, cn.FRContainer.SeListSerial.SeList.Builder.class);
     }
 
-    public static final int INNERLIST_FIELD_NUMBER = 1;
-    private java.util.List<cn.FRContainer.SeListSerial.FRText> innerList_;
-    /**
-     * <code>repeated .FRText innerList = 1;</code>
-     */
-    public java.util.List<cn.FRContainer.SeListSerial.FRText> getInnerListList() {
-      return innerList_;
+    public interface FRTextOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:SeList.FRText)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>required string key = 1;</code>
+       */
+      boolean hasKey();
+      /**
+       * <code>required string key = 1;</code>
+       */
+      java.lang.String getKey();
+      /**
+       * <code>required string key = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getKeyBytes();
+
+      /**
+       * <code>required int64 value = 2;</code>
+       */
+      boolean hasValue();
+      /**
+       * <code>required int64 value = 2;</code>
+       */
+      long getValue();
     }
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * Protobuf type {@code SeList.FRText}
      */
-    public java.util.List<? extends cn.FRContainer.SeListSerial.FRTextOrBuilder> 
-        getInnerListOrBuilderList() {
-      return innerList_;
+    public  static final class FRText extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:SeList.FRText)
+        FRTextOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use FRText.newBuilder() to construct.
+      private FRText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private FRText() {
+        key_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private FRText(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                key_ = bs;
+                break;
+              }
+              case 16: {
+                bitField0_ |= 0x00000002;
+                value_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cn.FRContainer.SeListSerial.internal_static_SeList_FRText_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cn.FRContainer.SeListSerial.internal_static_SeList_FRText_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cn.FRContainer.SeListSerial.SeList.FRText.class, cn.FRContainer.SeListSerial.SeList.FRText.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int KEY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object key_;
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public boolean hasKey() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            key_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 2;
+      private long value_;
+      /**
+       * <code>required int64 value = 2;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>required int64 value = 2;</code>
+       */
+      public long getValue() {
+        return value_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        if (!hasKey()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasValue()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeInt64(2, value_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(2, value_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof cn.FRContainer.SeListSerial.SeList.FRText)) {
+          return super.equals(obj);
+        }
+        cn.FRContainer.SeListSerial.SeList.FRText other = (cn.FRContainer.SeListSerial.SeList.FRText) obj;
+
+        if (hasKey() != other.hasKey()) return false;
+        if (hasKey()) {
+          if (!getKey()
+              .equals(other.getKey())) return false;
+        }
+        if (hasValue() != other.hasValue()) return false;
+        if (hasValue()) {
+          if (getValue()
+              != other.getValue()) return false;
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasKey()) {
+          hash = (37 * hash) + KEY_FIELD_NUMBER;
+          hash = (53 * hash) + getKey().hashCode();
+        }
+        if (hasValue()) {
+          hash = (37 * hash) + VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getValue());
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static cn.FRContainer.SeListSerial.SeList.FRText parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(cn.FRContainer.SeListSerial.SeList.FRText prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code SeList.FRText}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:SeList.FRText)
+          cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return cn.FRContainer.SeListSerial.internal_static_SeList_FRText_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return cn.FRContainer.SeListSerial.internal_static_SeList_FRText_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  cn.FRContainer.SeListSerial.SeList.FRText.class, cn.FRContainer.SeListSerial.SeList.FRText.Builder.class);
+        }
+
+        // Construct using cn.FRContainer.SeListSerial.SeList.FRText.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          key_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          value_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return cn.FRContainer.SeListSerial.internal_static_SeList_FRText_descriptor;
+        }
+
+        @java.lang.Override
+        public cn.FRContainer.SeListSerial.SeList.FRText getDefaultInstanceForType() {
+          return cn.FRContainer.SeListSerial.SeList.FRText.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public cn.FRContainer.SeListSerial.SeList.FRText build() {
+          cn.FRContainer.SeListSerial.SeList.FRText result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public cn.FRContainer.SeListSerial.SeList.FRText buildPartial() {
+          cn.FRContainer.SeListSerial.SeList.FRText result = new cn.FRContainer.SeListSerial.SeList.FRText(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.key_ = key_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.value_ = value_;
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof cn.FRContainer.SeListSerial.SeList.FRText) {
+            return mergeFrom((cn.FRContainer.SeListSerial.SeList.FRText)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(cn.FRContainer.SeListSerial.SeList.FRText other) {
+          if (other == cn.FRContainer.SeListSerial.SeList.FRText.getDefaultInstance()) return this;
+          if (other.hasKey()) {
+            bitField0_ |= 0x00000001;
+            key_ = other.key_;
+            onChanged();
+          }
+          if (other.hasValue()) {
+            setValue(other.getValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          if (!hasKey()) {
+            return false;
+          }
+          if (!hasValue()) {
+            return false;
+          }
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          cn.FRContainer.SeListSerial.SeList.FRText parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (cn.FRContainer.SeListSerial.SeList.FRText) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object key_ = "";
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public boolean hasKey() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public java.lang.String getKey() {
+          java.lang.Object ref = key_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              key_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getKeyBytes() {
+          java.lang.Object ref = key_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            key_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public Builder setKey(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          key_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public Builder clearKey() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          key_ = getDefaultInstance().getKey();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string key = 1;</code>
+         */
+        public Builder setKeyBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          key_ = value;
+          onChanged();
+          return this;
+        }
+
+        private long value_ ;
+        /**
+         * <code>required int64 value = 2;</code>
+         */
+        public boolean hasValue() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         * <code>required int64 value = 2;</code>
+         */
+        public long getValue() {
+          return value_;
+        }
+        /**
+         * <code>required int64 value = 2;</code>
+         */
+        public Builder setValue(long value) {
+          bitField0_ |= 0x00000002;
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required int64 value = 2;</code>
+         */
+        public Builder clearValue() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          value_ = 0L;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:SeList.FRText)
+      }
+
+      // @@protoc_insertion_point(class_scope:SeList.FRText)
+      private static final cn.FRContainer.SeListSerial.SeList.FRText DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new cn.FRContainer.SeListSerial.SeList.FRText();
+      }
+
+      public static cn.FRContainer.SeListSerial.SeList.FRText getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<FRText>
+          PARSER = new com.google.protobuf.AbstractParser<FRText>() {
+        @java.lang.Override
+        public FRText parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FRText(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<FRText> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FRText> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public cn.FRContainer.SeListSerial.SeList.FRText getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int FRTEXTS_FIELD_NUMBER = 1;
+    private java.util.List<cn.FRContainer.SeListSerial.SeList.FRText> frtexts_;
+    /**
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
+     */
+    public java.util.List<cn.FRContainer.SeListSerial.SeList.FRText> getFrtextsList() {
+      return frtexts_;
     }
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    public int getInnerListCount() {
-      return innerList_.size();
+    public java.util.List<? extends cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder> 
+        getFrtextsOrBuilderList() {
+      return frtexts_;
     }
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    public cn.FRContainer.SeListSerial.FRText getInnerList(int index) {
-      return innerList_.get(index);
+    public int getFrtextsCount() {
+      return frtexts_.size();
     }
     /**
-     * <code>repeated .FRText innerList = 1;</code>
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
      */
-    public cn.FRContainer.SeListSerial.FRTextOrBuilder getInnerListOrBuilder(
+    public cn.FRContainer.SeListSerial.SeList.FRText getFrtexts(int index) {
+      return frtexts_.get(index);
+    }
+    /**
+     * <code>repeated .SeList.FRText frtexts = 1;</code>
+     */
+    public cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder getFrtextsOrBuilder(
         int index) {
-      return innerList_.get(index);
+      return frtexts_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -168,8 +851,8 @@ public final class SeListSerial {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      for (int i = 0; i < getInnerListCount(); i++) {
-        if (!getInnerList(i).isInitialized()) {
+      for (int i = 0; i < getFrtextsCount(); i++) {
+        if (!getFrtexts(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -181,8 +864,8 @@ public final class SeListSerial {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < innerList_.size(); i++) {
-        output.writeMessage(1, innerList_.get(i));
+      for (int i = 0; i < frtexts_.size(); i++) {
+        output.writeMessage(1, frtexts_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -193,9 +876,9 @@ public final class SeListSerial {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < innerList_.size(); i++) {
+      for (int i = 0; i < frtexts_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, innerList_.get(i));
+          .computeMessageSize(1, frtexts_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -212,8 +895,8 @@ public final class SeListSerial {
       }
       cn.FRContainer.SeListSerial.SeList other = (cn.FRContainer.SeListSerial.SeList) obj;
 
-      if (!getInnerListList()
-          .equals(other.getInnerListList())) return false;
+      if (!getFrtextsList()
+          .equals(other.getFrtextsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -225,9 +908,9 @@ public final class SeListSerial {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getInnerListCount() > 0) {
-        hash = (37 * hash) + INNERLIST_FIELD_NUMBER;
-        hash = (53 * hash) + getInnerListList().hashCode();
+      if (getFrtextsCount() > 0) {
+        hash = (37 * hash) + FRTEXTS_FIELD_NUMBER;
+        hash = (53 * hash) + getFrtextsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -357,17 +1040,17 @@ public final class SeListSerial {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getInnerListFieldBuilder();
+          getFrtextsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (innerListBuilder_ == null) {
-          innerList_ = java.util.Collections.emptyList();
+        if (frtextsBuilder_ == null) {
+          frtexts_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          innerListBuilder_.clear();
+          frtextsBuilder_.clear();
         }
         return this;
       }
@@ -396,14 +1079,14 @@ public final class SeListSerial {
       public cn.FRContainer.SeListSerial.SeList buildPartial() {
         cn.FRContainer.SeListSerial.SeList result = new cn.FRContainer.SeListSerial.SeList(this);
         int from_bitField0_ = bitField0_;
-        if (innerListBuilder_ == null) {
+        if (frtextsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            innerList_ = java.util.Collections.unmodifiableList(innerList_);
+            frtexts_ = java.util.Collections.unmodifiableList(frtexts_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.innerList_ = innerList_;
+          result.frtexts_ = frtexts_;
         } else {
-          result.innerList_ = innerListBuilder_.build();
+          result.frtexts_ = frtextsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -453,29 +1136,29 @@ public final class SeListSerial {
 
       public Builder mergeFrom(cn.FRContainer.SeListSerial.SeList other) {
         if (other == cn.FRContainer.SeListSerial.SeList.getDefaultInstance()) return this;
-        if (innerListBuilder_ == null) {
-          if (!other.innerList_.isEmpty()) {
-            if (innerList_.isEmpty()) {
-              innerList_ = other.innerList_;
+        if (frtextsBuilder_ == null) {
+          if (!other.frtexts_.isEmpty()) {
+            if (frtexts_.isEmpty()) {
+              frtexts_ = other.frtexts_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureInnerListIsMutable();
-              innerList_.addAll(other.innerList_);
+              ensureFrtextsIsMutable();
+              frtexts_.addAll(other.frtexts_);
             }
             onChanged();
           }
         } else {
-          if (!other.innerList_.isEmpty()) {
-            if (innerListBuilder_.isEmpty()) {
-              innerListBuilder_.dispose();
-              innerListBuilder_ = null;
-              innerList_ = other.innerList_;
+          if (!other.frtexts_.isEmpty()) {
+            if (frtextsBuilder_.isEmpty()) {
+              frtextsBuilder_.dispose();
+              frtextsBuilder_ = null;
+              frtexts_ = other.frtexts_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              innerListBuilder_ = 
+              frtextsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getInnerListFieldBuilder() : null;
+                   getFrtextsFieldBuilder() : null;
             } else {
-              innerListBuilder_.addAllMessages(other.innerList_);
+              frtextsBuilder_.addAllMessages(other.frtexts_);
             }
           }
         }
@@ -486,8 +1169,8 @@ public final class SeListSerial {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        for (int i = 0; i < getInnerListCount(); i++) {
-          if (!getInnerList(i).isInitialized()) {
+        for (int i = 0; i < getFrtextsCount(); i++) {
+          if (!getFrtexts(i).isInitialized()) {
             return false;
           }
         }
@@ -514,244 +1197,244 @@ public final class SeListSerial {
       }
       private int bitField0_;
 
-      private java.util.List<cn.FRContainer.SeListSerial.FRText> innerList_ =
+      private java.util.List<cn.FRContainer.SeListSerial.SeList.FRText> frtexts_ =
         java.util.Collections.emptyList();
-      private void ensureInnerListIsMutable() {
+      private void ensureFrtextsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          innerList_ = new java.util.ArrayList<cn.FRContainer.SeListSerial.FRText>(innerList_);
+          frtexts_ = new java.util.ArrayList<cn.FRContainer.SeListSerial.SeList.FRText>(frtexts_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cn.FRContainer.SeListSerial.FRText, cn.FRContainer.SeListSerial.FRText.Builder, cn.FRContainer.SeListSerial.FRTextOrBuilder> innerListBuilder_;
+          cn.FRContainer.SeListSerial.SeList.FRText, cn.FRContainer.SeListSerial.SeList.FRText.Builder, cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder> frtextsBuilder_;
 
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public java.util.List<cn.FRContainer.SeListSerial.FRText> getInnerListList() {
-        if (innerListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(innerList_);
+      public java.util.List<cn.FRContainer.SeListSerial.SeList.FRText> getFrtextsList() {
+        if (frtextsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(frtexts_);
         } else {
-          return innerListBuilder_.getMessageList();
+          return frtextsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public int getInnerListCount() {
-        if (innerListBuilder_ == null) {
-          return innerList_.size();
+      public int getFrtextsCount() {
+        if (frtextsBuilder_ == null) {
+          return frtexts_.size();
         } else {
-          return innerListBuilder_.getCount();
+          return frtextsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public cn.FRContainer.SeListSerial.FRText getInnerList(int index) {
-        if (innerListBuilder_ == null) {
-          return innerList_.get(index);
+      public cn.FRContainer.SeListSerial.SeList.FRText getFrtexts(int index) {
+        if (frtextsBuilder_ == null) {
+          return frtexts_.get(index);
         } else {
-          return innerListBuilder_.getMessage(index);
+          return frtextsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder setInnerList(
-          int index, cn.FRContainer.SeListSerial.FRText value) {
-        if (innerListBuilder_ == null) {
+      public Builder setFrtexts(
+          int index, cn.FRContainer.SeListSerial.SeList.FRText value) {
+        if (frtextsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInnerListIsMutable();
-          innerList_.set(index, value);
+          ensureFrtextsIsMutable();
+          frtexts_.set(index, value);
           onChanged();
         } else {
-          innerListBuilder_.setMessage(index, value);
+          frtextsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder setInnerList(
-          int index, cn.FRContainer.SeListSerial.FRText.Builder builderForValue) {
-        if (innerListBuilder_ == null) {
-          ensureInnerListIsMutable();
-          innerList_.set(index, builderForValue.build());
+      public Builder setFrtexts(
+          int index, cn.FRContainer.SeListSerial.SeList.FRText.Builder builderForValue) {
+        if (frtextsBuilder_ == null) {
+          ensureFrtextsIsMutable();
+          frtexts_.set(index, builderForValue.build());
           onChanged();
         } else {
-          innerListBuilder_.setMessage(index, builderForValue.build());
+          frtextsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder addInnerList(cn.FRContainer.SeListSerial.FRText value) {
-        if (innerListBuilder_ == null) {
+      public Builder addFrtexts(cn.FRContainer.SeListSerial.SeList.FRText value) {
+        if (frtextsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInnerListIsMutable();
-          innerList_.add(value);
+          ensureFrtextsIsMutable();
+          frtexts_.add(value);
           onChanged();
         } else {
-          innerListBuilder_.addMessage(value);
+          frtextsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder addInnerList(
-          int index, cn.FRContainer.SeListSerial.FRText value) {
-        if (innerListBuilder_ == null) {
+      public Builder addFrtexts(
+          int index, cn.FRContainer.SeListSerial.SeList.FRText value) {
+        if (frtextsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureInnerListIsMutable();
-          innerList_.add(index, value);
+          ensureFrtextsIsMutable();
+          frtexts_.add(index, value);
           onChanged();
         } else {
-          innerListBuilder_.addMessage(index, value);
+          frtextsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder addInnerList(
-          cn.FRContainer.SeListSerial.FRText.Builder builderForValue) {
-        if (innerListBuilder_ == null) {
-          ensureInnerListIsMutable();
-          innerList_.add(builderForValue.build());
+      public Builder addFrtexts(
+          cn.FRContainer.SeListSerial.SeList.FRText.Builder builderForValue) {
+        if (frtextsBuilder_ == null) {
+          ensureFrtextsIsMutable();
+          frtexts_.add(builderForValue.build());
           onChanged();
         } else {
-          innerListBuilder_.addMessage(builderForValue.build());
+          frtextsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder addInnerList(
-          int index, cn.FRContainer.SeListSerial.FRText.Builder builderForValue) {
-        if (innerListBuilder_ == null) {
-          ensureInnerListIsMutable();
-          innerList_.add(index, builderForValue.build());
+      public Builder addFrtexts(
+          int index, cn.FRContainer.SeListSerial.SeList.FRText.Builder builderForValue) {
+        if (frtextsBuilder_ == null) {
+          ensureFrtextsIsMutable();
+          frtexts_.add(index, builderForValue.build());
           onChanged();
         } else {
-          innerListBuilder_.addMessage(index, builderForValue.build());
+          frtextsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder addAllInnerList(
-          java.lang.Iterable<? extends cn.FRContainer.SeListSerial.FRText> values) {
-        if (innerListBuilder_ == null) {
-          ensureInnerListIsMutable();
+      public Builder addAllFrtexts(
+          java.lang.Iterable<? extends cn.FRContainer.SeListSerial.SeList.FRText> values) {
+        if (frtextsBuilder_ == null) {
+          ensureFrtextsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, innerList_);
+              values, frtexts_);
           onChanged();
         } else {
-          innerListBuilder_.addAllMessages(values);
+          frtextsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder clearInnerList() {
-        if (innerListBuilder_ == null) {
-          innerList_ = java.util.Collections.emptyList();
+      public Builder clearFrtexts() {
+        if (frtextsBuilder_ == null) {
+          frtexts_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          innerListBuilder_.clear();
+          frtextsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public Builder removeInnerList(int index) {
-        if (innerListBuilder_ == null) {
-          ensureInnerListIsMutable();
-          innerList_.remove(index);
+      public Builder removeFrtexts(int index) {
+        if (frtextsBuilder_ == null) {
+          ensureFrtextsIsMutable();
+          frtexts_.remove(index);
           onChanged();
         } else {
-          innerListBuilder_.remove(index);
+          frtextsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public cn.FRContainer.SeListSerial.FRText.Builder getInnerListBuilder(
+      public cn.FRContainer.SeListSerial.SeList.FRText.Builder getFrtextsBuilder(
           int index) {
-        return getInnerListFieldBuilder().getBuilder(index);
+        return getFrtextsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public cn.FRContainer.SeListSerial.FRTextOrBuilder getInnerListOrBuilder(
+      public cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder getFrtextsOrBuilder(
           int index) {
-        if (innerListBuilder_ == null) {
-          return innerList_.get(index);  } else {
-          return innerListBuilder_.getMessageOrBuilder(index);
+        if (frtextsBuilder_ == null) {
+          return frtexts_.get(index);  } else {
+          return frtextsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public java.util.List<? extends cn.FRContainer.SeListSerial.FRTextOrBuilder> 
-           getInnerListOrBuilderList() {
-        if (innerListBuilder_ != null) {
-          return innerListBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder> 
+           getFrtextsOrBuilderList() {
+        if (frtextsBuilder_ != null) {
+          return frtextsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(innerList_);
+          return java.util.Collections.unmodifiableList(frtexts_);
         }
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public cn.FRContainer.SeListSerial.FRText.Builder addInnerListBuilder() {
-        return getInnerListFieldBuilder().addBuilder(
-            cn.FRContainer.SeListSerial.FRText.getDefaultInstance());
+      public cn.FRContainer.SeListSerial.SeList.FRText.Builder addFrtextsBuilder() {
+        return getFrtextsFieldBuilder().addBuilder(
+            cn.FRContainer.SeListSerial.SeList.FRText.getDefaultInstance());
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public cn.FRContainer.SeListSerial.FRText.Builder addInnerListBuilder(
+      public cn.FRContainer.SeListSerial.SeList.FRText.Builder addFrtextsBuilder(
           int index) {
-        return getInnerListFieldBuilder().addBuilder(
-            index, cn.FRContainer.SeListSerial.FRText.getDefaultInstance());
+        return getFrtextsFieldBuilder().addBuilder(
+            index, cn.FRContainer.SeListSerial.SeList.FRText.getDefaultInstance());
       }
       /**
-       * <code>repeated .FRText innerList = 1;</code>
+       * <code>repeated .SeList.FRText frtexts = 1;</code>
        */
-      public java.util.List<cn.FRContainer.SeListSerial.FRText.Builder> 
-           getInnerListBuilderList() {
-        return getInnerListFieldBuilder().getBuilderList();
+      public java.util.List<cn.FRContainer.SeListSerial.SeList.FRText.Builder> 
+           getFrtextsBuilderList() {
+        return getFrtextsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          cn.FRContainer.SeListSerial.FRText, cn.FRContainer.SeListSerial.FRText.Builder, cn.FRContainer.SeListSerial.FRTextOrBuilder> 
-          getInnerListFieldBuilder() {
-        if (innerListBuilder_ == null) {
-          innerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              cn.FRContainer.SeListSerial.FRText, cn.FRContainer.SeListSerial.FRText.Builder, cn.FRContainer.SeListSerial.FRTextOrBuilder>(
-                  innerList_,
+          cn.FRContainer.SeListSerial.SeList.FRText, cn.FRContainer.SeListSerial.SeList.FRText.Builder, cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder> 
+          getFrtextsFieldBuilder() {
+        if (frtextsBuilder_ == null) {
+          frtextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cn.FRContainer.SeListSerial.SeList.FRText, cn.FRContainer.SeListSerial.SeList.FRText.Builder, cn.FRContainer.SeListSerial.SeList.FRTextOrBuilder>(
+                  frtexts_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          innerList_ = null;
+          frtexts_ = null;
         }
-        return innerListBuilder_;
+        return frtextsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -806,699 +1489,16 @@ public final class SeListSerial {
 
   }
 
-  public interface FRTextOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FRText)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required string key = 1;</code>
-     */
-    boolean hasKey();
-    /**
-     * <code>required string key = 1;</code>
-     */
-    java.lang.String getKey();
-    /**
-     * <code>required string key = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>required int64 value = 2;</code>
-     */
-    boolean hasValue();
-    /**
-     * <code>required int64 value = 2;</code>
-     */
-    long getValue();
-  }
-  /**
-   * Protobuf type {@code FRText}
-   */
-  public  static final class FRText extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FRText)
-      FRTextOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FRText.newBuilder() to construct.
-    private FRText(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FRText() {
-      key_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FRText(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              key_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              value_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return cn.FRContainer.SeListSerial.internal_static_FRText_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return cn.FRContainer.SeListSerial.internal_static_FRText_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              cn.FRContainer.SeListSerial.FRText.class, cn.FRContainer.SeListSerial.FRText.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
-    /**
-     * <code>required string key = 1;</code>
-     */
-    public boolean hasKey() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required string key = 1;</code>
-     */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          key_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>required string key = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private long value_;
-    /**
-     * <code>required int64 value = 2;</code>
-     */
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>required int64 value = 2;</code>
-     */
-    public long getValue() {
-      return value_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasKey()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasValue()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(2, value_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, value_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof cn.FRContainer.SeListSerial.FRText)) {
-        return super.equals(obj);
-      }
-      cn.FRContainer.SeListSerial.FRText other = (cn.FRContainer.SeListSerial.FRText) obj;
-
-      if (hasKey() != other.hasKey()) return false;
-      if (hasKey()) {
-        if (!getKey()
-            .equals(other.getKey())) return false;
-      }
-      if (hasValue() != other.hasValue()) return false;
-      if (hasValue()) {
-        if (getValue()
-            != other.getValue()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasKey()) {
-        hash = (37 * hash) + KEY_FIELD_NUMBER;
-        hash = (53 * hash) + getKey().hashCode();
-      }
-      if (hasValue()) {
-        hash = (37 * hash) + VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getValue());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cn.FRContainer.SeListSerial.FRText parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(cn.FRContainer.SeListSerial.FRText prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code FRText}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FRText)
-        cn.FRContainer.SeListSerial.FRTextOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return cn.FRContainer.SeListSerial.internal_static_FRText_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return cn.FRContainer.SeListSerial.internal_static_FRText_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                cn.FRContainer.SeListSerial.FRText.class, cn.FRContainer.SeListSerial.FRText.Builder.class);
-      }
-
-      // Construct using cn.FRContainer.SeListSerial.FRText.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        key_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        value_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return cn.FRContainer.SeListSerial.internal_static_FRText_descriptor;
-      }
-
-      @java.lang.Override
-      public cn.FRContainer.SeListSerial.FRText getDefaultInstanceForType() {
-        return cn.FRContainer.SeListSerial.FRText.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public cn.FRContainer.SeListSerial.FRText build() {
-        cn.FRContainer.SeListSerial.FRText result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public cn.FRContainer.SeListSerial.FRText buildPartial() {
-        cn.FRContainer.SeListSerial.FRText result = new cn.FRContainer.SeListSerial.FRText(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.key_ = key_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.value_ = value_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cn.FRContainer.SeListSerial.FRText) {
-          return mergeFrom((cn.FRContainer.SeListSerial.FRText)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(cn.FRContainer.SeListSerial.FRText other) {
-        if (other == cn.FRContainer.SeListSerial.FRText.getDefaultInstance()) return this;
-        if (other.hasKey()) {
-          bitField0_ |= 0x00000001;
-          key_ = other.key_;
-          onChanged();
-        }
-        if (other.hasValue()) {
-          setValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        if (!hasKey()) {
-          return false;
-        }
-        if (!hasValue()) {
-          return false;
-        }
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        cn.FRContainer.SeListSerial.FRText parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cn.FRContainer.SeListSerial.FRText) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object key_ = "";
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public boolean hasKey() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            key_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public Builder clearKey() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        key_ = getDefaultInstance().getKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required string key = 1;</code>
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        key_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long value_ ;
-      /**
-       * <code>required int64 value = 2;</code>
-       */
-      public boolean hasValue() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>required int64 value = 2;</code>
-       */
-      public long getValue() {
-        return value_;
-      }
-      /**
-       * <code>required int64 value = 2;</code>
-       */
-      public Builder setValue(long value) {
-        bitField0_ |= 0x00000002;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 value = 2;</code>
-       */
-      public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        value_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:FRText)
-    }
-
-    // @@protoc_insertion_point(class_scope:FRText)
-    private static final cn.FRContainer.SeListSerial.FRText DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new cn.FRContainer.SeListSerial.FRText();
-    }
-
-    public static cn.FRContainer.SeListSerial.FRText getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<FRText>
-        PARSER = new com.google.protobuf.AbstractParser<FRText>() {
-      @java.lang.Override
-      public FRText parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FRText(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FRText> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FRText> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public cn.FRContainer.SeListSerial.FRText getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SeList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SeList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FRText_descriptor;
+    internal_static_SeList_FRText_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FRText_fieldAccessorTable;
+      internal_static_SeList_FRText_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1508,10 +1508,10 @@ public final class SeListSerial {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014SeList.proto\"$\n\006SeList\022\032\n\tinnerList\030\001 " +
-      "\003(\0132\007.FRText\"$\n\006FRText\022\013\n\003key\030\001 \002(\t\022\r\n\005v" +
-      "alue\030\002 \002(\003B\036\n\016cn.FRContainerB\014SeListSeri" +
-      "al"
+      "\n\014SeList.proto\"O\n\006SeList\022\037\n\007frtexts\030\001 \003(" +
+      "\0132\016.SeList.FRText\032$\n\006FRText\022\013\n\003key\030\001 \002(\t" +
+      "\022\r\n\005value\030\002 \002(\003B\036\n\016cn.FRContainerB\014SeLis" +
+      "tSerial"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1530,12 +1530,12 @@ public final class SeListSerial {
     internal_static_SeList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SeList_descriptor,
-        new java.lang.String[] { "InnerList", });
-    internal_static_FRText_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_FRText_fieldAccessorTable = new
+        new java.lang.String[] { "Frtexts", });
+    internal_static_SeList_FRText_descriptor =
+      internal_static_SeList_descriptor.getNestedTypes().get(0);
+    internal_static_SeList_FRText_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FRText_descriptor,
+        internal_static_SeList_FRText_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

@@ -30,14 +30,19 @@ public class ReadLine {
 		Long tmpLength=0L;
 		try {			
 			RandomAccessFile raf=new RandomAccessFile(file,"r");
-			Long remainlength = raf.length();
+			int lineCount = 0;
+			while (raf.readLine() != null) {
+			  lineCount++;
+			}
+			System.out.println(lineCount);
+		
 			while((tmp=br.readLine())!=null){
 				position++;
 				int length2 = tmp.getBytes().length;
-				tmpLength=tmpLength+length2;
-				remainlength=remainlength-length2;
-				//100个字节了，改变信号,剩余只有不到100字节了,改变信号
-				if(tmpLength>=100 ||remainlength<100){
+				tmpLength=tmpLength+length2;			
+				//1000个字节了，改变信号,剩余最后一行改变信号
+				System.out.println(position);
+				if(tmpLength>=1000 ||position==lineCount){
 					splitSignal=true;
 					//恢复
 					tmpLength=0L;
