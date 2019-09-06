@@ -11,3 +11,5 @@ tmp=C:/Users/stawind/Desktop/tmp
 num=10  
 #### 设置你的forkreduce类的位置  
 target=cn.fork.MyForkReduce  
+  
+然后需要继承ForkReduce接口，实现fork和reduce方法，完成后运行driver类即可
