@@ -9,7 +9,7 @@ output=C:/Users/stawind/Desktop/output
 tmp=C:/Users/stawind/Desktop/tmp  
 #### 设置你的reduce线程个数  
 num=10  
-在设置线程个数的时候，需要自行计算一下最合适的开启线程数。合适的线程数=cpu可用核心数/(1-阻塞系数）。阻塞系数的取值在0和1之间。计算操作多
+在设置线程个数的时候，需要自行计算一下最合适的开启线程数。合适的线程数=cpu可用逻辑核心数/(1-阻塞系数）。阻塞系数的取值在0和1之间。计算操作多
 于io操作时时，阻塞系数小。io操作多于计算操作时，阻塞系数大。因此这个线程数不是越大越好的
 #### 设置你的forkreduce类的位置  
 target=cn.fork.MyForkReduce  
